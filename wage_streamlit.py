@@ -8,15 +8,15 @@ import plotly.express as px
 st.title('日本の賃金データダッシュボード')
 
 #pandasで処理したCSVの読み込み
-df_jp_ind = pd.read_csv('test_streamlit\csv_data\雇用_医療福祉_一人当たり賃金_全国_全産業.csv', encoding='shift_jis')
-df_jp_category = pd.read_csv('test_streamlit\csv_data\雇用_医療福祉_一人当たり賃金_全国_大分類.csv', encoding='shift_jis')
-df_pref_ind = pd.read_csv('test_streamlit\csv_data\雇用_医療福祉_一人当たり賃金_都道府県_全産業.csv', encoding='shift_jis')
+df_jp_ind = pd.read_csv('csv_data\雇用_医療福祉_一人当たり賃金_全国_全産業.csv', encoding='shift_jis')
+df_jp_category = pd.read_csv('csv_data\雇用_医療福祉_一人当たり賃金_全国_大分類.csv', encoding='shift_jis')
+df_pref_ind = pd.read_csv('csv_data\雇用_医療福祉_一人当たり賃金_都道府県_全産業.csv', encoding='shift_jis')
 
 #ヘッダーの表示
 st.header('■2019年：一人当たり平均賃金のヒートマップ')
 
 #都道府県の緯度経度の読み込み、上の３つのDFと結合させるためカラムのリネイム
-jp_lat_lon = pd.read_csv('test_streamlit\pref_lat_lon.csv')
+jp_lat_lon = pd.read_csv('pref_lat_lon.csv')
 jp_lat_lon = jp_lat_lon.rename(columns={'pref_name': '都道府県名'})
 
 #2019年の年齢計での一人当たり賃金
